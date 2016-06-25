@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        running = true;
         playerMap = new Dictionary<string, Transform>();
     }
 
@@ -41,7 +42,7 @@ public class GameManager : MonoBehaviour
         SVGAsset playerSvg = GameObject.FindObjectOfType<SVGContainer>().getSvg(svgName);
         player.GetComponent<SVGRenderer>().vectorGraphics = playerSvg;
         player.GetChild(0).GetComponent<SVGRenderer>().color = GameObject.FindObjectOfType<ColorHelper>().RandomColor();
-
+        player.parent = GameObject.FindGameObjectWithTag("Board").transform;
         playerMap.Add(id, player);
     }
 
@@ -65,8 +66,11 @@ public class GameManager : MonoBehaviour
         if (running)
         { // TODO improve movement logic
             Transform player = playerMap[name];
-            player.GetComponent<Rigidbody2D>().AddForce(direction * Time.deltaTime * 1000, ForceMode2D.Force);
-            //   player.transform.position = direction;
+            player.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x * 500 * Time.deltaTime, 0);
+            player.localScale = new Vector2((direction.x < 0 ? -1 : 1) * 0.5F, player.localScale.y);
+
+     //       if(direction.y > 0)
+            player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, direction.y) * Time.deltaTime * 10000, ForceMode2D.Force);
         }
     }
 
