@@ -11,10 +11,10 @@ public class GameManager : MonoBehaviour
     public Transform playerPrefab;
 
     // settings
-    public int minSpawnX = -10;
-    public int maxSpawnX = -10;
-    public int minSpawnY = 2;
-    public int maxSpawnY = 2;
+    public int minSpawnX = -5;
+    public int maxSpawnX = -5;
+    public int minSpawnY = 5;
+    public int maxSpawnY = 5;
 
     // game state
     private Dictionary<String, Transform> playerMap;
