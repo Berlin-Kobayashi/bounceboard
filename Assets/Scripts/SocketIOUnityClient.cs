@@ -49,6 +49,8 @@ public class SocketIOUnityClient: MonoBehaviour
     {
         for (int i = 0; i < messageQueue.Count; i++)
         {
+            GameManager gameManager = GameObject.FindObjectOfType<GameManager>();
+
             IMessage message = messageQueue.Dequeue();
 
             JsonObject args = (JsonObject)message.Json.args[0];
@@ -57,15 +59,15 @@ public class SocketIOUnityClient: MonoBehaviour
             {
                 case "user-joined":
                     Debug.Log((string)args.Values.ElementAt(1));
-                    GetComponent<GameManager>().spawnPlayer((string)args.Values.ElementAt(0), (string)args.Values.ElementAt(1));
+                    gameManager.spawnPlayer((string)args.Values.ElementAt(0), (string)args.Values.ElementAt(1));
                     break;
                 case "user-left":
-                    GetComponent<GameManager>().deSpawnPlayer((string)args.Values.ElementAt(0));
+                    gameManager.deSpawnPlayer((string)args.Values.ElementAt(0));
                     break;
                 case "set-vector2D":
 
                     Vector2 direction = new Vector2(Convert.ToSingle(args.Values.ElementAt(0)), Convert.ToSingle(args.Values.ElementAt(1)));
-                    GetComponent<GameManager>().movePlayer((string)args.Values.ElementAt(2), direction);
+                    gameManager.movePlayer((string)args.Values.ElementAt(2), direction);
                     break;
             }
         }

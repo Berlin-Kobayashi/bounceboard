@@ -2,6 +2,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using SVGImporter;
 using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
@@ -31,13 +32,27 @@ public class GameManager : MonoBehaviour
         Transform player = (Transform)Instantiate(playerPrefab, position, Quaternion.identity);
         player.GetComponent<PlayerCharacter>().setName(name);
 
+        string svgName = "skate-guy";
+        if (Random.Range(0, 2) == 1)
+        {
+            svgName = "skate-girl";
+        }
+
+        SVGAsset playerSvg = GameObject.FindObjectOfType<SVGContainer>().getSvg(svgName);
+        player.GetComponent<SVGRenderer>().vectorGraphics = playerSvg;
+        player.GetChild(0).GetComponent<SVGRenderer>().color = GameObject.FindObjectOfType<ColorHelper>().RandomColor();
+
         playerMap.Add(id, player);
     }
 
     public void deSpawnPlayer(string name)
     {
-        //   playerMap.Remove(name);
-        Destroy(playerMap[name].gameObject);
+        if (playerMap.ContainsKey(name))
+        {
+            Destroy(playerMap[name].gameObject);
+            playerMap.Remove(name);
+        }
+
     }
 
     private Vector2 createRandomPosition(int minX, int maxX, int minY, int maxY)

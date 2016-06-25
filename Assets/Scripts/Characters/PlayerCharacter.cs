@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using SVGImporter;
 
 public class PlayerCharacter : MonoBehaviour
 {
