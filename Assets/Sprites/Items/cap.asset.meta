@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: e84a48415d4ecc24daf3eea052e93658
+timeCreated: 1466865054
+licenseType: Free
+NativeFormatImporter:
+  userData: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD
+    SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\r\n<!-- Creator:
+    CorelDRAW X7 -->\r\n<svg xmlns=\"http://www.w3.org/2000/svg\" xml:space=\"preserve\"
+    width=\"3.16161in\" height=\"1.16309in\" version=\"1.1\" style=\"shape-rendering:geometricPrecision;
+    text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd;
+    clip-rule:evenodd\"\r\nviewBox=\"0 0 789 290\"\r\n xmlns:xlink=\"http://www.w3.org/1999/xlink\">\r\n
+    <defs>\r\n  <style type=\"text/css\">\r\n   <![CDATA[\r\n    .fil0 {fill:#F3942E}\r\n
+    \   .fil1 {fill:#EB5F36}\r\n    .fil2 {fill:#F6E840}\r\n   ]]>\r\n  </style>\r\n
+    </defs>\r\n <g id=\"Layer_x0020_1\">\r\n  <metadata id=\"CorelCorpID_0Corel-Layer\"/>\r\n
+    \ <g id=\"_1923956623328\">\r\n   <path class=\"fil0\" d=\"M48 231l148 -7 3 57
+    -199 9 0 -6c-1,-28 20,-52 48,-53z\"/>\r\n   <path class=\"fil1\" d=\"M584 223l-1
+    -14c-1,-23 -20,-40 -42,-39l-132 6c-23,1 -40,20 -39,43l1 14 213 -10zm-185 -216l136
+    -7c133,-6 246,97 253,230l1 23 -189 9 -240 11 -190 9 -1 -23c-6,-133 97,-246 230,-252z\"/>\r\n
+    \  <polygon class=\"fil2\" points=\"371,233 371,244 585,234 584,223 \"/>\r\n   <polygon
+    class=\"fil0\" points=\"358,234 360,273 600,262 598,223 584,223 371,233 \"/>\r\n
+    \ </g>\r\n </g>\r\n</svg>\r\n"
+  assetBundleName: 
+  assetBundleVariant: 
